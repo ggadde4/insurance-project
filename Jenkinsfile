@@ -15,7 +15,7 @@ node{
         
         
         stage('build docker image'){
-            sh 'sudo docker build -t gg04/insure-me:1.0 .'
+            sh 'docker build -t gg04/insure-me:1.0 .'
             sh 'docker images'
         }
         
