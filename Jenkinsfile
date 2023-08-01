@@ -14,11 +14,12 @@ node{
         }
         
         
-        /*stage('build docker image'){
-            sh 'docker build -t shubhamkushwah123/insure-me:1.0 .'
+        stage('build docker image'){
+            sh 'docker build -t gg04/insure-me:1.0 .'
+            sh 'docker images'
         }
         
-        stage('push docker image to docker hub registry')
+        /*stage('push docker image to docker hub registry')
         {
             echo 'pushing images to registry'
             
