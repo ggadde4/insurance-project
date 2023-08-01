@@ -10,7 +10,7 @@ node{
                 echo 'starting maven build'
                 sh 'mvn clean package'
                 sh 'ls -altr'
-                sh 'cd target/ && pwd && ls -altrh'
+                sh 'cd target/ && pwd && ls -altrh && cd ..'
         }
         
         
