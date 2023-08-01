@@ -1,4 +1,9 @@
 node{
+
+        stage('git checkout'){
+            echo "checking out the code from github"
+            git 'https://github.com/ggadde4/insurance-project.git'
+        }
         
         stage('maven build'){
                 echo 'starting maven build'
