@@ -1,14 +1,10 @@
 node{
-        stage('git checkout'){
-            echo "checking out the code from github"
-            git 'https://github.com/shubhamkushwah123/insurance-project-demo.git'
-        }
         
         stage('maven build'){
             sh 'mvn clean package'
         }
         
-        stage('build docker image'){
+        /*stage('build docker image'){
             sh 'docker build -t shubhamkushwah123/insure-me:1.0 .'
         }
         
@@ -26,6 +22,6 @@ node{
             echo "configuring test-server"
           //  sh 'ansible-playbook configure-test-server.yml'
             ansiblePlaybook become: true, credentialsId: 'ssh-key-ansibles', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'configure-test-server.yml'
-        }
+        }*/
         
 }
