@@ -10,12 +10,12 @@ node{
                 echo 'starting maven build'
                 sh 'mvn clean package'
                 sh 'ls -altr'
-                sh 'cd target/ && pwd && ls -altrh && cd ..'
+                sh 'cd target/ && pwd && ls -altrh && cd .. && pwd'
         }
         
         
         stage('build docker image'){
-            sh 'docker build -t gg04/insure-me:1.0 .'
+            sh 'sudo docker build -t gg04/insure-me:1.0 .'
             sh 'docker images'
         }
         
