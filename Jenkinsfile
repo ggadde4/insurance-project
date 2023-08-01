@@ -1,8 +1,11 @@
 node{
         
         stage('maven build'){
-            sh 'mvn clean package'
+                echo 'starting maven build'
+                sh 'mvn clean package'
+                sh 'ls -altr'
         }
+        
         
         /*stage('build docker image'){
             sh 'docker build -t shubhamkushwah123/insure-me:1.0 .'
