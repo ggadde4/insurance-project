@@ -22,6 +22,7 @@ node{
         stage('push docker image to docker hub registry'){
             echo 'pushing images to registry'
             withCredentials([string(credentialsId: 'DockerPWD', variable: 'dockerHubPassword')]) {
+                echo "${dockerHubPassword}"
                 sh "docker login -u gg04 -p ${dockerHubPassword}"
                 sh 'docker push gg04/insure-me:1.0'
             }
