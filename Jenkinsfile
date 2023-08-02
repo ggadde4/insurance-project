@@ -19,17 +19,17 @@ node{
             sh 'docker images'
         }
         
-        /*stage('push docker image to docker hub registry')
+        stage('push docker image to docker hub registry')
         {
             echo 'pushing images to registry'
             
-            withCredentials([string(credentialsId: 'docker-hub-password', variable: 'dockerHubPassword')]) {
-                sh "docker login -u shubhamkushwah123 -p ${dockerHubPassword}"
-                sh 'docker push shubhamkushwah123/insure-me:1.0'
+            withCredentials([string(credentialsId: 'DockerPWD, variable: 'dockerHubPassword')]) {
+                sh "docker login -u gg04 -p ${dockerHubPassword}"
+                sh 'docker push gg04/insure-me:1.0'
             }
         }
         
-        stage('configure test-server and deploy insure-me'){
+        /*stage('configure test-server and deploy insure-me'){
             echo "configuring test-server"
           //  sh 'ansible-playbook configure-test-server.yml'
             ansiblePlaybook become: true, credentialsId: 'ssh-key-ansibles', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'configure-test-server.yml'
